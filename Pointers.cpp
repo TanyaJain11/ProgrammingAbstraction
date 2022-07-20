@@ -10,3 +10,4 @@ int main(){
     *q=35;
     cout<<i<<j<<*p<<*q;
 }
+
