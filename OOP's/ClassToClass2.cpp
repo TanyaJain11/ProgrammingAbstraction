@@ -1,9 +1,15 @@
 #include<iostream>
 using namespace std;
 
+class Complex;
 class Rectangle{
     int l,b;
     public:
+
+    Rectangle(Complex c){
+        l=c.getReal();
+        b=c.getImg();
+    }
 
     Rectangle(int l,int b){
         this->l = l;
@@ -23,16 +29,24 @@ class Complex{
         img=i;
     }
 
+    int getReal(){
+        return real;
+    }
+
+    int getImg(){
+        return img;
+    }
+
     void display(){
         cout<<"My number is :"<<real<<"+"<<img<<"i"<<endl;
     }
 
     // source class m operator function and operator function don;t need return type 
 
-        operator Rectangle(){
-            Rectangle temp(real,img);
-            return temp;
-        }
+        // operator Rectangle(){
+        //     Rectangle temp(real,img);
+        //     return temp;
+        // }
 };
 
 
@@ -40,7 +54,7 @@ class Complex{
 int main()
 {
     Complex A(2,3);
-    Rectangle B = A; // A.operator rectangle()
+   Rectangle B = A; // A.operator rectangle()
     A.display();
     B.print();
 
