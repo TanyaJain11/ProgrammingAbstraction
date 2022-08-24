@@ -24,12 +24,33 @@ int main()
         L.push_back(element);
     }
 
+    list<int> :: iterator ir;
+    ir = M.begin();
+    *ir=5;
+    ir++;
+    *ir = 7;
+    ir++;
+    *ir = 9;
+
+    display(M);
+
     L.pop_back();
     // L.pop_front();
 
     // particular element remove krne k liye
     //L.remove(2);  if want to remove 2
 
+    display(L);
+
+    // for soting 
+    M.sort();
+    L.sort();
+
+    display(L);
+    display(M);
+
+    // merging two list 
+    L.merge(M);
     display(L);
     return 0;
 }
