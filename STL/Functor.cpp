@@ -1,6 +1,7 @@
 #include<iostream>
-#include<stdlib.h>
-#include<bits/stdc++.h>
+// #include<stdlib.h>
+#include<functional>
+#include<algorithm>
 using namespace std;
 int main()
 {
