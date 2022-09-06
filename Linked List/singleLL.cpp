@@ -54,7 +54,41 @@ void insert(Node* &head,int d ,int val){
 
 
 
- void display(Node* n){
+void replace(Node*& head,int old,int new1){
+			Node* temp= head;
+			while(temp->data!=old){
+				temp=temp->next;
+				if(temp==NULL){
+					return;    //matlab woh node mili hii n ahi jisse replace karna hai
+				}
+			}
+			temp->data=new1;
+            			
+		}
+
+
+void delete_val(Node* &head,int dat){
+
+    Node* prev = head;
+    Node* temp = head;
+
+    if(head->data==dat){
+        head=temp->next;
+        temp->next=NULL;
+        delete temp;
+        return;
+    }
+
+    while(temp->data!=dat){
+        prev=temp;
+        temp=temp->next;
+    }
+
+    prev->next=temp->next;
+    delete temp;
+}
+
+void display(Node* n){
         while(n!= NULL){
             cout<<n->data<<" ";
             n=n->next;
@@ -89,6 +123,12 @@ int main()
     // head->next=second;
 
     insert(head,20,10);
+    display(head);
+
+    replace(head,20,33);
+    display(head);
+
+    delete_val(head,7);
     display(head);
 
     return 0;
